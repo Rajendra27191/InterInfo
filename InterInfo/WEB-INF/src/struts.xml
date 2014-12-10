@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="json" namespace="/" extends="struts-default, json-default">
+		<action name="login" class="action.LoginAction" method="login">
+			<result type="json">
+				<param name="root">objBean</param>
+			</result>
+		</action>
+
+		<action name="customerRegistration" class="action.RegistrationAction"
+			method="createCustomer">
+			<result type="json">
+				<param name="root">objCustomerBean</param>
+			</result>
+			<result name="success">cRegistration.jsp</result>
+		</action>
+
+		<action name="getCustomerList" class="action.RegistrationAction"
+			method="getCustomerList">
+			<result type="json">
+				<param name="root">objCustomerBeans</param>
+			</result>
+		</action>
+
+		<action name="getCustomerDetails" class="action.RegistrationAction"
+			method="getCustomerDetails">
+			<result type="json">
+				<param name="root">objCustomerBean</param>
+			</result>
+		</action>
+
+		<action name="userOperation" class="action.UserAction" method="userOperation">
+			<result type="json">
+				<param name="root">objUserBean</param>
+			</result>
+			<result name="success">userRegistration.jsp</result>
+		</action>
+
+		<action name="getUserList" class="action.UserAction" method="getUserList">
+			<result type="json">
+				<param name="root">objUserBeans</param>
+			</result>
+		</action>
+
+		<action name="getUserDetail" class="action.UserAction" method="getUserDetail">
+			<result type="json">
+				<param name="root">objUserBean</param>
+			</result>
+		</action>
+
+		<action name="reportOperation" class="action.ReportAction" method="reportOperation">
+			<result type="json">
+				<param name="root">objReportBean</param>
+			</result>
+			<result name="success">createReport.jsp</result>
+		</action>
+		
+		<action name="getReportList" class="action.ReportAction" method="getReportList">
+			<result type="json">
+				<param name="root">objReportBeans</param>
+			</result>
+		</action>
+		
+		<action name="getReportDetails" class="action.ReportAction" method="getReportDetails">
+			<result type="json">
+				<param name="root">objReportBean</param>
+			</result>
+		</action>
+		
+		<action name="getNationalReports" class="action.ReportAction" method="getNationalReports">
+			<result type="json">
+				<param name="root">objReportBeans</param>
+			</result>
+		</action>
+		
+		<action name="getInternationalReports" class="action.ReportAction" method="getInternationalReports">
+			<result type="json">
+				<param name="root">objReportBeans</param>
+			</result>
+		</action>
+		
+		<action name="changePassword" class="action.ProfileAction" method="changePassword">
+			<result type="json">
+				<param name="root">objProfileBean</param>
+			</result>
+			<result name="success">changePassword.jsp</result>
+		</action>
+	</package>
+</struts>
